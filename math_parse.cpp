@@ -2,40 +2,34 @@
 #include "math_parse.h"
 
 
-//  function prototypes
-
-
 int main()
 {
   // local variables
   int error_check, result;
-  string str1 = "1+6";
-  string str2 = "";
-  string str3 = "  1  /     4   ";
-  string str4 = "(4*3)    - 9";
-  string str5 = "9 - (4*3)";
-
-  // instantiate a parser object
+  string filepath;
   parser my_parser;
 
   cout << endl << "Welcome to Ian's mathematical expression parser\n";
+  cout << "\n\nwhat input file would you like to use?\n";
+  cin >> filepath;
 
-  // check for empty string and return error if present
-  error_check = my_parser.set_expression(str4);
-  if (error_check == 0)
-    cout << "\n\t ERROR: empty expression detected\n\n";
+  // load data and check for errors
+  error_check = my_parser.load_data(filepath);
 
-  // remove all white space from string if any to # of characters
-  my_parser.set_expression(my_parser.remove_spaces());
+  for(int i = 0; i < 20; i++)
+  {
+    // check for empty string and return error if present
+    error_check = my_parser.set_expression();
+    if (error_check == 0)
+      cout << "\n\t ERROR: empty expression detected\n\n";
 
-  // parse and evaluate the string
-  result = my_parser.parse_and_evaluate();
+    // remove all white space from string if any to # of characters
+    //my_parser.remove_spaces();
+
+    // parse and evaluate the string
+    result = my_parser.parse_and_evaluate();
+  }
 
   // end of program
-  return 0;
+  return 1;
 }
-
-
-
-// function definitions
-
