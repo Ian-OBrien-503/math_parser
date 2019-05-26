@@ -1,5 +1,12 @@
 # math_parser
-parses and evaluates simple mathematical expressions
+parses and evaluates simple mathematical expressions handles operators +, -, *, and /
+handles expressions in the form of...  
+let # = +, -, *, /  
+num # num  
+(num # num) # num  
+num # (num # num)  
+(num # num) # (num # num)  
+
 
 # instructions to run...
 1) clone repo into a local directory (should only be one .cpp file, one .h file, and one data.txt file)
