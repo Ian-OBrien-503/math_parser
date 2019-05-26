@@ -7,6 +7,8 @@ num # num
 num # (num # num)  
 (num # num) # (num # num)  
 
+if allowed more time to work on would make parser much more modular and handle expressions of any length, would start with these operators again and then move onto to exponents and modulus operators.
+
 
 # instructions to run...
 1) clone repo into a local directory (should only be one .cpp file, one .h file, and one data.txt file)
